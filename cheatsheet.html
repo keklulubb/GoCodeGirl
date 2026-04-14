@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Cheat Sheet - GoCodeGirl Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f3e8ff 0%, #fce7f3 100%);
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border-top: 4px solid #6D28D9;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #6D28D9;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #EC4899;
+            font-weight: 500;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border-left: 4px solid #06B6D4;
+        }
+
+        .card.pink {
+            border-left-color: #EC4899;
+        }
+
+        .card.purple {
+            border-left-color: #6D28D9;
+        }
+
+        .card h2 {
+            font-size: 1.5em;
+            color: #6D28D9;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3 {
+            font-size: 1em;
+            color: #EC4899;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .tag-example {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #374151;
+            overflow-x: auto;
+        }
+
+        .tag-desc {
+            font-size: 0.95em;
+            color: #6b7280;
+            margin-left: 0;
+            margin-bottom: 8px;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .color-box {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .color-info {
+            font-size: 0.85em;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-name {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .color-code {
+            display: block;
+            color: #6b7280;
+            font-size: 0.8em;
+        }
+
+        .tip-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .tip-list li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #4b5563;
+            font-size: 0.95em;
+        }
+
+        .tip-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #06B6D4;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .trouble-item {
+            margin-bottom: 16px;
+            padding: 12px;
+            background: #fef3c7;
+            border-left: 3px solid #f59e0b;
+            border-radius: 4px;
+        }
+
+        .trouble-item strong {
+            color: #92400e;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .trouble-item span {
+            color: #78350f;
+            font-size: 0.95em;
+        }
+
+        /* Two column layout on desktop */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            header {
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+                page-break-after: avoid;
+            }
+
+            .card {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+            }
+
+            .content {
+                gap: 16px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML & CSS Cheat Sheet</h1>
+            <p class="subtitle">GoCodeGirl Workshop</p>
+        </header>
+
+        <div class="content">
+            <!-- HTML Basics -->
+            <div class="card">
+                <h2>📝 HTML Basics</h2>
+
+                <h3>What HTML Tags Look Like:</h3>
+                <div class="tag-example">&lt;tag&gt;content&lt;/tag&gt;</div>
+
+                <h3>Essential Tags:</h3>
+
+                <div class="tag-example">&lt;h1&gt;...&lt;/h1&gt;</div>
+                <div class="tag-desc">Headings (h1 = biggest, h6 = smallest)</div>
+
+                <div class="tag-example">&lt;p&gt;...&lt;/p&gt;</div>
+                <div class="tag-desc">Paragraph of text</div>
+
+                <div class="tag-example">&lt;a href="url"&gt;link text&lt;/a&gt;</div>
+                <div class="tag-desc">Link to another page</div>
+
+                <div class="tag-example">&lt;img src="file.jpg" alt="description"&gt;</div>
+                <div class="tag-desc">Image (note: no closing tag!)</div>
+
+                <div class="tag-example">&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;item&lt;/li&gt;<br>&lt;/ul&gt;</div>
+                <div class="tag-desc">Bullet list (unordered)</div>
+
+                <div class="tag-example">&lt;ol&gt;<br>&nbsp;&nbsp;&lt;li&gt;item&lt;/li&gt;<br>&lt;/ol&gt;</div>
+                <div class="tag-desc">Numbered list (ordered)</div>
+
+                <div class="tag-example">&lt;div&gt;...&lt;/div&gt;</div>
+                <div class="tag-desc">Container/box for grouping content</div>
+
+                <div class="tag-example">&lt;strong&gt;...&lt;/strong&gt;</div>
+                <div class="tag-desc">Bold text</div>
+
+                <div class="tag-example">&lt;em&gt;...&lt;/em&gt;</div>
+                <div class="tag-desc">Italic text</div>
+            </div>
+
+            <!-- CSS Basics -->
+            <div class="card pink">
+                <h2>🎨 CSS Basics</h2>
+
+                <h3>How CSS Works:</h3>
+                <div class="tag-example">selector { property: value; }</div>
+
+                <h3>Common Properties:</h3>
+
+                <div class="tag-example">color: purple;</div>
+                <div class="tag-desc">Changes text color</div>
+
+                <div class="tag-example">background-color: pink;</div>
+                <div class="tag-desc">Changes background color</div>
+
+                <div class="tag-example">font-size: 20px;</div>
+                <div class="tag-desc">Changes text size</div>
+
+                <div class="tag-example">padding: 15px;</div>
+                <div class="tag-desc">Space inside an element</div>
+
+                <div class="tag-example">margin: 15px;</div>
+                <div class="tag-desc">Space outside an element</div>
+
+                <div class="tag-example">border: 2px solid purple;</div>
+                <div class="tag-desc">Border around element</div>
+
+                <div class="tag-example">border-radius: 8px;</div>
+                <div class="tag-desc">Rounded corners</div>
+
+                <div class="tag-example">text-align: center;</div>
+                <div class="tag-desc">Align: left, center, or right</div>
+            </div>
+
+            <!-- Colors -->
+            <div class="card">
+                <h2>🌈 Colors</h2>
+
+                <h3>How to Write Colors:</h3>
+                <ul class="tip-list">
+                    <li>Names: <code>purple</code>, <code>pink</code></li>
+                    <li>Hex codes: <code>#6D28D9</code></li>
+                    <li>RGB: <code>rgb(109, 40, 217)</code></li>
+                </ul>
+
+                <h3>Popular Colors:</h3>
+                <div class="color-grid">
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #6D28D9;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Purple</span>
+                            <span class="color-code">#6D28D9</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #EC4899;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Pink</span>
+                            <span class="color-code">#EC4899</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #06B6D4;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Cyan</span>
+                            <span class="color-code">#06B6D4</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #3B82F6;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Blue</span>
+                            <span class="color-code">#3B82F6</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #10B981;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Green</span>
+                            <span class="color-code">#10B981</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #F59E0B;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Orange</span>
+                            <span class="color-code">#F59E0B</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #EF4444;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Red</span>
+                            <span class="color-code">#EF4444</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-box" style="background-color: #000000;"></div>
+                        <div class="color-info">
+                            <span class="color-name">Black</span>
+                            <span class="color-code">#000000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Helpful Tips -->
+            <div class="card purple">
+                <h2>💡 Helpful Tips</h2>
+
+                <ul class="tip-list">
+                    <li>Always save your file before refreshing the browser</li>
+                    <li>Close every tag you open: <code>&lt;h1&gt;...&lt;/h1&gt;</code></li>
+                    <li>CSS goes in the .css file, HTML goes in the .html file</li>
+                    <li>Use Ctrl+S (or Cmd+S on Mac) to save</li>
+                    <li>If something looks wrong, check for typos first</li>
+                    <li>Make sure all semicolons are in your CSS</li>
+                    <li>You can right-click and choose "View Page Source" to see HTML</li>
+                    <li>The browser's developer tools (F12) can help you debug</li>
+                </ul>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="card">
+                <h2>🔧 Quick Fixes</h2>
+
+                <div class="trouble-item">
+                    <strong>"My page is blank"</strong>
+                    <span>Check if the HTML file is saved. Then refresh the browser (Ctrl+R or Cmd+R).</span>
+                </div>
+
+                <div class="trouble-item">
+                    <strong>"My CSS isn't working"</strong>
+                    <span>Make sure <code>&lt;link rel="stylesheet" href="style.css"&gt;</code> is in your <code>&lt;head&gt;</code> tag and the filename matches.</span>
+                </div>
+
+                <div class="trouble-item">
+                    <strong>"My image won't show"</strong>
+                    <span>Check that the filename and path match exactly. File names are case-sensitive (.jpg vs .JPG matters!).</span>
+                </div>
+
+                <div class="trouble-item">
+                    <strong>"Colors aren't changing"</strong>
+                    <span>Make sure you saved the CSS file too. Close and reopen the HTML file in your browser.</span>
+                </div>
+
+                <div class="trouble-item">
+                    <strong>"Tags are showing on the page"</strong>
+                    <span>You might have forgotten to close a tag or have a typo. Check that all tags are spelled correctly and closed.</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            📚 Keep this tab open while you code! Print it out if you need a physical copy.
+        </footer>
+    </div>
+</body>
+</html>

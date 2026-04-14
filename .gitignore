@@ -1,0 +1,5 @@
+.DS_Store
+*.pdf
+slide-*.jpg
+WORKSHOP_GUIDE.txt
+node_modules/

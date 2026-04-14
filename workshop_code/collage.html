@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Collage - GoCodeGirl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="funFacts.html" class="nav-link">Fun Facts</a>
+      <a href="collage.html" class="nav-link active">Photo Collage</a>
+      <a href="quiz/quiz.html" class="nav-link">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>My Photo Collage</h1>
+
+    <!-- Instructions for adding images -->
+    <div style="background-color: #eff6ff; border-left: 4px solid #06b6d4; padding: 15px; margin-bottom: 30px; border-radius: 6px;">
+      <strong>How to add photos:</strong> Save image files to the <code>images/</code> folder, or use a web image URL. Then change <code>src="..."</code> in the HTML.
+    </div>
+
+    <!-- STEP 1: Change the section title -->
+    <h2>Memories & Favorites</h2>
+    <div class="collage-grid">
+      <!-- STEP 2: Replace images and update captions -->
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/7c3aed/white?text=Photo+1" alt="Photo 1">
+        <p>Edit this caption</p>
+      </div>
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/d946ef/white?text=Photo+2" alt="Photo 2">
+        <p>Edit this caption</p>
+      </div>
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/06b6d4/white?text=Photo+3" alt="Photo 3">
+        <p>Edit this caption</p>
+      </div>
+    </div>
+
+    <!-- STEP 3: Add your own section with photos -->
+    <h2>More Adventures</h2>
+    <div class="collage-grid">
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/16a34a/white?text=Photo+4" alt="Photo 4">
+        <p>Edit this caption</p>
+      </div>
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/ea580c/white?text=Photo+5" alt="Photo 5">
+        <p>Edit this caption</p>
+      </div>
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/0284c7/white?text=Photo+6" alt="Photo 6">
+        <p>Edit this caption</p>
+      </div>
+    </div>
+
+    <!-- Bonus challenge section (commented out) -->
+    <!-- BONUS CHALLENGE: Uncomment this section to add a 3rd gallery!
+         Then try changing the grid to 2 columns by editing style.css -->
+    <!--
+    <h2>Bonus Challenge Section</h2>
+    <div class="collage-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/fbbf24/white?text=Bonus+1" alt="Bonus 1">
+        <p>Your photo here</p>
+      </div>
+      <div class="photo-card">
+        <img src="https://placehold.co/400x400/f97316/white?text=Bonus+2" alt="Bonus 2">
+        <p>Your photo here</p>
+      </div>
+    </div>
+    -->
+
+    <p style="text-align: center; margin-top: 40px;">
+      <a href="index.html" class="btn">Back to Home</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Made with heart by [Your Name]</p>
+  </footer>
+</body>
+</html>
